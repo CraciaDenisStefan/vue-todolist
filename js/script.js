@@ -27,7 +27,13 @@ createApp({
             text:'Gioca',
             done: false 
         },
-    ]
+    ],
+    
     }
-  }
+  },
+  methods: {
+    statusDone(index){
+        this.tasks[index].done=!this.tasks[index].done;
+    }
+}
 }).mount('#app')

@@ -25,11 +25,12 @@
                     <ul class="list-unstyled fs-4">
                     <!-- Inizio lista delle task -->
                         <li class="border-bottom border-black d-flex justify-content-between" v-for="(task, index) in tasks">
-                            <div>{{task.text}}</div>
-                            <div> 
+                            <div :class="task.done ? 'text-decoration-line-through': ''">
+                                {{task.text}}</div>
+                            <div>
                                 <!-- Button -->
-                                <button type="button" class="btn btn-success btn-sm me-1 mb-2">
-                                    <i class="fa-solid fa-check"></i>
+                                <button type="button" class="btn btn-success btn-sm me-1 mb-2" :class="task.done ? 'btn-info' : ''" @click="statusDone(index)" >
+                                    <i class="fa-solid fa-check" :class="task.done ? 'fa-x' : '' "></i>
                                 </button>
                                 <button type="button" class="btn btn-danger btn-sm mb-2">
                                     <i class="fa-sharp fa-solid fa-trash"></i>
