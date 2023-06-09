@@ -28,7 +28,7 @@
                     <ul class="list-unstyled fs-4 text-light">
                     <!-- Inizio lista delle task -->
                         <li class="border-bottom border-black d-flex justify-content-between" v-for="(task, index) in tasks">
-                            <div :class="task.done ? 'text-decoration-line-through': ''">
+                            <div class="col-10" :class="task.done ? 'text-decoration-line-through': ''">
                                 {{task.text}}</div>
                             <div>
                                 <!-- Button -->

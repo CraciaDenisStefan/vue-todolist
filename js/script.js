@@ -28,7 +28,7 @@ createApp({
             done: false 
         },
     ],
-        newTask:'',
+       newTask:'',
     }
   },
   methods: {
@@ -43,7 +43,9 @@ createApp({
             text :this.newTask,
             done : false,
         }
-        this.tasks.push(newTaskObj)
+        if (newTaskObj.text.length > 0 ) {
+            this.tasks.push(newTaskObj)
+        }
         this.newTask=''
     }
 }
