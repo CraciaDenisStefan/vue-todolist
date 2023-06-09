@@ -28,7 +28,7 @@ createApp({
             done: false 
         },
     ],
-    
+        newTask:'',
     }
   },
   methods: {
@@ -37,7 +37,14 @@ createApp({
     },
     deleteTask(index){
         this.tasks.splice(index, 1)
-
+    },
+    addTask(){
+        let newTaskObj={
+            text :this.newTask,
+            done : false,
+        }
+        this.tasks.push(newTaskObj)
+        this.newTask=''
     }
 }
 }).mount('#app')
